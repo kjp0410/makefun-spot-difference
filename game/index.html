@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Second Glance — a spot-the-difference game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Second&nbsp;Glance</div>
+  <div class="scene-name" id="hudScene">Scene 1 of 3</div>
+  <div class="score-box">Score&nbsp;<span id="hudScore">0</span></div>
+</header>
+
+<section class="statusbar">
+  <div class="counter"><span id="hudLeft">5</span><label>differences left</label></div>
+  <div class="timer-wrap">
+    <div class="timer-bar"><div id="timeBar"></div></div>
+    <div class="timer-text" id="timeText">2:30</div>
+  </div>
+  <div class="found" id="hudFound">0 found of 5</div>
+  <div class="buttons">
+    <button id="btnHint" type="button">Hint (3)</button>
+    <button id="btnPause" type="button">Pause</button>
+    <button id="btnRestart" type="button">Restart</button>
+    <button id="btnMute" type="button">Mute</button>
+  </div>
+</section>
+
+<main id="stage">
+  <figure class="panel">
+    <canvas id="cvL" width="1200" height="920"></canvas>
+    <figcaption>Picture A</figcaption>
+  </figure>
+  <figure class="panel">
+    <canvas id="cvR" width="1200" height="920"></canvas>
+    <figcaption>Picture B</figcaption>
+  </figure>
+  <div id="kbCursor" aria-hidden="true"></div>
+  <div id="overlay"></div>
+</main>
+
+<footer class="toastbar">
+  <span id="toast">Two pictures. A handful of differences. One clock.</span>
+  <span class="keys-hint">Arrows + Enter: keyboard play · H hint · P pause · R restart · M mute</span>
+</footer>
+
+<script src="js/drawing.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/input.js"></script>
+<script src="js/game.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
